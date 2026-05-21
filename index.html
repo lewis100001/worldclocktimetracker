@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>World Clock</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta http-equiv="refresh" content="1">
+</head>
+<body>
+
+    <div class="container">
+        <h1>World Clock</h1>
+        <p class="subtitle">Live time across different cities</p>
+
+        <div class="clock-grid">
+            {% for item in world_times %}
+            <div class="clock-card">
+                <h2>{{ item.city }}</h2>
+                <h3>{{ item.time }}</h3>
+                <p>{{ item.date }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
